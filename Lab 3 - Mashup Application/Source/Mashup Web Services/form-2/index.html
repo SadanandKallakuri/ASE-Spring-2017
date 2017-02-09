@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Login &amp; Register Templates</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+
+            <meta name="google-signin-client_id" content="925558669243-eak81f6onfkco8u8h7f9v6i4edfrt6s0.apps.googleusercontent.com">
+
+
+
+
+
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+
+
+
+            <div class="inner-bg">
+                <div class="container">
+                	
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong></strong> Login &amp; Register </h1>
+
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Login to our site</h3>
+	                            		<p>Enter username and password to log on:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-lock"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form role="form" action="" method="post" class="login-form">
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-username">Username</label>
+				                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+				                        </div>
+
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-password">Password</label>
+				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+				                        </div>
+				                        <button type="submit" class="btn">Sign in!</button>
+				                    </form>
+
+			                    </div>
+		                    </div>
+                            <div id="fb-root"></div>
+
+                            <script>
+                                function statusChangeCallback(response) {
+                                    console.log('statusChangeCallback');
+                                    console.log(response);
+                                    // The response object is returned with a status field that lets the
+                                    // app know the current login status of the person.
+                                    // Full docs on the response object can be found in the documentation
+                                    // for FB.getLoginStatus().
+                                    if (response.status === 'connected') {
+                                        // Logged into your app and Facebook.
+                                        window.location='oauth.html';
+                                    } else if (response.status === 'not_authorized') {
+                                        // The person is logged into Facebook, but not your app.
+                                        document.getElementById('status').innerHTML = 'Please log ' +
+                                            'into this app.';
+                                    } else {
+                                        // The person is not logged into Facebook, so we're not sure if
+                                        // they are logged into this app or not.
+                                        document.getElementById('status').innerHTML = 'Please log ' +
+                                            'into Facebook.';
+                                    }
+                                }
+
+                                // This function is called when someone finishes with the Login
+                                // Button.  See the onlogin handler attached to it in the sample
+                                // code below.
+                                function checkLoginState() {
+                                    FB.getLoginStatus(function(response) {
+                                        statusChangeCallback(response);
+                                    });
+                                }
+
+                                window.fbAsyncInit = function() {
+                                    FB.init({
+                                        appId      : '1175092539271602',
+                                        cookie     : true,  // enable cookies to allow the server to access
+                                                            // the session
+                                        xfbml      : true,  // parse social plugins on this page
+                                        version    : 'v2.8' // use graph api version 2.8
+                                    });
+
+                                    // Now that we've initialized the JavaScript SDK, we call
+                                    // FB.getLoginStatus().  This function gets the state of the
+                                    // person visiting this page and can return one of three states to
+                                    // the callback you provide.  They can be:
+                                    //
+                                    // 1. Logged into your app ('connected')
+                                    // 2. Logged into Facebook, but not your app ('not_authorized')
+                                    // 3. Not logged into Facebook and can't tell if they are logged into
+                                    //    your app or not.
+                                    //
+                                    // These three cases are handled in the callback function.
+
+                                    FB.getLoginStatus(function(response) {
+                                        statusChangeCallback(response);
+                                    });
+
+                                };
+
+                                // Load the SDK asynchronously
+                                (function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));
+
+                                // Here we run a very simple test of the Graph API after login is
+                                // successful.  See statusChangeCallback() for when this call is made.
+                                function testAPI() {
+                                    console.log('Welcome!  Fetching your information.... ');
+                                    FB.api('/me', function(response) {
+                                        console.log('Successful login for: ' + response.name);
+                                        document.getElementById('status').innerHTML =
+                                            'Thanks for logging in, ' + response.name + '!';
+                                    });
+                                }
+                                </script>
+		                	<div class="social-login">
+	                        	<h3>...or login with:</h3>
+	                        	<div class="social-login-buttons">
+
+
+                                    <a class="btn btn-link-2" href="#">
+                                        <i class="fa fa-facebook"></i> Facebook
+                                    </a>
+                                    <a class="btn btn-link-2" href="#">
+                                        <i class="fa fa-google-plus"></i> Google Plus
+                                    </a>
+                                    <a class="btn btn-link-2" href="#">
+                                        <i class="fa fa-twitter"></i> Twitter
+                                    </a>
+
+	                        	</div>
+
+	                        </div>
+                            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                            </fb:login-button>
+
+
+                            <div id="status">
+                            </div>
+                            <div id="my-signin2"></div>
+                            <script>
+                                function onSuccess(googleUser) {
+                                    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                                }
+                                function onFailure(error) {
+                                    console.log(error);
+                                }
+                                function renderButton() {
+                                    gapi.signin2.render('my-signin2', {
+                                        'scope': 'profile email',
+                                        'width': 240,
+                                        'height': 50,
+                                        'longtitle': true,
+                                        'theme': 'dark',
+                                        'onsuccess': onSuccess,
+                                        'onfailure': onFailure
+                                    });
+                                }
+                            </script>
+
+
+
+
+                        </div>
+                        
+                        <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                        	
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+                        		<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Sign up now</h3>
+	                            		<p>Fill in the form below to get instant access:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-pencil"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form role="form" action="" method="post" class="registration-form">
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-first-name">First name</label>
+				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-last-name">Last name</label>
+				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-email">Email</label>
+				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-email">Password</label>
+                                            <input type="text" name="form-email" placeholder="Password..." class="form-email form-control" id="form-email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-email">Re-type Password</label>
+                                            <input type="text" name="form-email" placeholder="Re-type Password..." class="form-email form-control" id="form-email">
+                                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
+				                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
+				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
+				                        </div>
+				                        <button type="submit" class="btn">Sign me up!</button>
+				                    </form>
+			                    </div>
+                        	</div>
+                        	
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Footer -->
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+
+        <![endif]-->
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://apis.google.com/js/api:client.js"></script>
+    </body>
+
+
+</html>

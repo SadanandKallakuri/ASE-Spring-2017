@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .controls {
+            margin-top: 10px;
+            border: 1px solid transparent;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            height: 32px;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #origin-input,
+        #destination-input {
+            background-color: #fff;
+            font-family: Comic Sans MS;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 12px;
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 200px;
+        }
+
+        #origin-input:focus,
+        #destination-input:focus {
+            border-color: #4d90fe;
+        }
+
+        #mode-selector {
+            color: #fff;
+            background-color: #4d90fe;
+            margin-left: 12px;
+            padding: 5px 11px 0px 11px;
+        }
+
+        #mode-selector label {
+            font-family: Comic Sans MS;
+            font-size: 13px;
+            font-weight: 300;
+        }
+        .btn {
+            background-color: grey; /* Green */
+            border-radius: 4px;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        input[type=text] {
+
+            border: 2px solid grey;
+            border-radius: 4px;
+            width:20%;
+            padding: 12px 20px;
+
+        }
+        body
+        {
+            background-image :url("img/img2.jpg");
+
+        }
+
+
+
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="app.js"></script>
+<body class="bgg" ng-app="Review">
+
+
+<div id="map"></div>
+
+
+
+<div ng-controller="Reviewcontroller">
+
+
+    <p align="center">
+        <input type="text" id="txt_search" placeholder="Enter the place"/>
+        <input type="text" id="txt_searchFilter" placeholder="Enter the search query"/>
+        <button class="btn btn-primary" ng-click="review()" >Search</button>
+    </p>
+    <div id="div_VenueList">
+        <h2 style="text-align: center; color: grey;font-family: Comic Sans MS;font-size:200%"> Longitude and Latitude Using Geocode </h2>
+        <ul>
+
+        </ul>
+   </div>
+    <div class="partition-wrap">
+        <div class="partition1">
+            <div class="form" style="padding: 10px; margin:20px; alignment: center">
+                <table align="center">
+                    <tr>
+                        <td colspan="2" >
+                            <img ng-src="{{iconStart}}" style="alignment: center"/></td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-family: Comic Sans MS;font-size:160%"><b>Longitude:</b></td>
+                        <td align="left" style="font-family: 'Cambria'; font-size:160%"> {{tempe}}</td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-family: Comic Sans MS;font-size:160% "><b> Latitude:</b></td>
+                        <td align="left" style="font-family: 'Cambria'; font-size:160%"> {{tempe1}}</td>
+                    </tr>
+                </table>
+                    <h2 style="text-align: center; color: grey;font-family: Comic Sans MS;font-size:200%"> Top Results Using Here API </h2>
+                <table align="center">
+                    <tr>
+                        <td align="left" style="font-family: Comic Sans MS;font-size:160%"><b> Venue1:</b></td>
+                        <td align="left" style="font-family: 'Cambria'; font-size:160%"> {{venueList}}</td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-family: Comic Sans MS;font-size:160%"><b> Venue2:</b></td>
+                        <td align="left" style="font-family: 'Cambria'; font-size:160%"> {{venueList1}}</td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-family: Comic Sans MS;font-size:160%"><b> Venue3:</b></td>
+                        <td align="left" style="font-family: 'Cambria'; font-size:160%"> {{venueList2}}</td>
+                    </tr>
+
+                </table>
+</div>
+            <div id="div_ReviewList" style="display:none;"  >
+
+
+                <p ng-model="sentiment">
+                <h2 style="text-align: center; color: grey;font-family: Comic Sans MS;font-size:200%"> Sentiment analysis</h2>
+                <TABLE BORDER=2 align="center" CELLPADDING=4> <TR> <TH style="color: white; background:grey" COLSPAN=2>Sentiment Analysis Using Alchemy API </TH> </TR>
+                    <TR> <TD>Most recent review</TD> <TD>{{sentiment.reviewText}}</TD> </TR>
+                    <TR> <TD>Sentiment of the review</TD> <TD>{{sentiment.sentiment}}</TD> </TR>
+                    <TR> <TD>Sentiment Score of the review</TD> <TD>{{sentiment.score}}</TD> </TR>
+                <TR> <TD>Sentiment Language</TD> <TD>{{sentiment.language}}</TD> </TR>
+
+                <TR> <TH style="color: white; background:grey" COLSPAN=2 BGCOLOR="grey">{{sentiment.reviewText}}</TH> </TR>
+                </TABLE>
+
+                </p>
+
+            </div>
+            <script src="app.js"></script>
+
+</body>
+</html>
