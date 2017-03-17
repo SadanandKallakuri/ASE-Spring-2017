@@ -17,6 +17,8 @@ app.controller("Weathercontroller",function ($scope,$http) {
             $scope.maxTemp=data.main.temp_max;
             $scope.windSpeed=data.wind.speed;
             $scope.visibility=data.visibility;
+            $scope.icon=data.weather.main;
+
 
 
 
@@ -24,7 +26,7 @@ app.controller("Weathercontroller",function ($scope,$http) {
 
         var end=document.getElementById('destination-input').value;
         console.log(end);
-        $http.get('http://api.openweathermap.org/data/2.5/weather?q='+end+'&appid=1920897eee7dbbbb21d4a710962e51bc').success(function (data) {
+        $http.get('http://api.wunderground.com/api/e9e6428c0bb5f4e4/conditions/q/CA/San_Francisco.json').success(function (data) {
 
             console.log(5+9);
             $scope.tempEnd=data.main.temp;
@@ -34,6 +36,8 @@ app.controller("Weathercontroller",function ($scope,$http) {
             $scope.maxTemp=data.main.temp_max;
             $scope.windSpeed=data.wind.speed;
             $scope.visibility=data.visibility;
+            $scope.icon=data.weather[0].icon.png;
+
 
 
         })
