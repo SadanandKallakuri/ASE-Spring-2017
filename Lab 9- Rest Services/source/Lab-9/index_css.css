@@ -1,0 +1,130 @@
+.h{
+    background-image: url("3.jpg");
+    background-size: 100% 680px ,cover;
+    font-family: "comic sans ms";
+    color: white;
+
+    }
+.heading{
+    font-family: "comic sans ms";
+    text-align: center;
+    margin-top: 25px;
+    color: white;
+}
+.body1{
+    text-align: center;
+    font-size: 17px;
+}
+.button {
+    background-color: deepskyblue;
+    border: black;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.c1{
+
+    border-style: solid;
+    border-color: black;
+    font-size:15pt;
+    height:32px;
+    width:300px;
+}
+.b1{
+    background-color: white;
+    font-weight: bolder;
+    color: black;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+.b2{
+    background-color: white;
+    font-weight: bolder;
+    color: black;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+.b3{
+    background-color: white;
+    margin-left: 200px;
+    color: black;
+    margin-right: 200px;
+    font-weight: bolder;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+.b4{
+    background-color: white;
+    margin-left: 200px;
+    font-weight: bolder;
+    margin-right: 200px;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+.b5{
+    background-color: white;
+    color: black;
+    margin-left: 200px;
+    font-weight: bolder;
+    margin-right: 200px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+.b6{
+    background-color: white;
+    color: black;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-weight: bolder;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+.b7{
+    background-color: white;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-style: solid;
+    color: black;
+    font-weight: bolder;
+    border-color: black;
+    background-color: white;
+}
+.b8{
+    background-color: white;
+    margin-left: 200px;
+    margin-right: 200px;
+    color: black;
+    border-style: solid;
+    font-weight: bolder;
+    border-color: black;
+    background-color: white;
+}
+.b9{
+    background-color: white;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-weight: bolder;
+    border-style: solid;
+    color: black;
+    border-color: black;
+    background-color: white;
+}
+.h3{
+    color: white;
+}
